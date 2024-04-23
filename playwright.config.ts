@@ -5,6 +5,8 @@ import { defineConfig, devices } from '@playwright/test';
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config();
+import dotenv from 'dotenv'
+dotenv.config()
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -23,7 +25,7 @@ export default defineConfig({
   expect: {
     timeout: 5 * 1000
   },
-  
+
   reporter: [
     ['html', { open: 'never' }],
     // ['json', { outputFile: "jsonReports/reports.json"}]
@@ -38,6 +40,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     headless: true,
+    baseURL: process.env.BASE_URL
   },
 
   /* Configure projects for major browsers */
