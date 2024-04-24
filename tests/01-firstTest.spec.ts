@@ -1,10 +1,10 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from '@playwright/test'
 
-test.describe("First test suite", () => {
-  test("Refresh, navigate back and forward", async ({ page }) => {
+test.describe('First test suite', () => {
+  test('Refresh, navigate back and forward', async ({ page }) => {
 
     // Navigate to a page
-    await page.goto("https://www.techglobal-training.com/")
+    await page.goto('https://www.techglobal-training.com/')
 
     // Refresh the page
     await page.reload()
@@ -17,11 +17,11 @@ test.describe("First test suite", () => {
 
     // Navigating forward
     await page.goForward()
-  });
+  })
 
   test('Validate page Title', async ({ page }) => {
 
-    await page.goto("https://www.techglobal-training.com/")
+    await page.goto('https://www.techglobal-training.com/')
 
     // const title = page.title()
 
@@ -36,7 +36,7 @@ test.describe("First test suite", () => {
 
   test('Validate the page URL', async ({ page }) => {
 
-    await page.goto("https://www.techglobal-training.com/")
+    await page.goto('https://www.techglobal-training.com/')
 
     // const url = page.url()
     // console.log(url, ' MY PAGE TITLE')
@@ -47,7 +47,7 @@ test.describe("First test suite", () => {
 
   test('My First Test', async ({ page }) => {
 
-    await page.goto("https://www.techglobal-training.com/")
+    await page.goto('https://www.techglobal-training.com/')
 
     // await page.click('#logo')
 
@@ -57,4 +57,4 @@ test.describe("First test suite", () => {
 
     await expect(myLogo).toBeVisible()
   })
-});
+})

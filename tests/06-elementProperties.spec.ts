@@ -1,11 +1,11 @@
-import { test } from "@playwright/test";
-import { clickButton, clickLink } from "../helpers/clickHelpers";
+import { test } from '@playwright/test'
+import { clickLink } from '../helpers/clickHelpers'
 
-test.describe("Element Properties", () => {
+test.describe('Element Properties', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/frontend");
-    await clickLink(page, "Html Elements");
-  });
+    await page.goto('https://www.techglobal-training.com/frontend')
+    await clickLink(page, 'Html Elements')
+  })
 
   test('Getting Element Properties', async({ page }) => {
 
@@ -53,6 +53,8 @@ test.describe("Element Properties", () => {
     const result = await page.evaluate(() => {
       return document.title
     })
+
+    console.log(result)
 
     const href = await page.evaluate(() => {
       return document.location.href

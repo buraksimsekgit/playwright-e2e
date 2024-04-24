@@ -1,13 +1,13 @@
-import { test, expect } from "@playwright/test";
-import { clickLink } from "../helpers/clickHelpers";
+import { test, expect } from '@playwright/test'
+import { clickLink } from '../helpers/clickHelpers'
 
-test.describe("Annotations", () => {
+test.describe('Annotations', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/frontend");
+    await page.goto('https://www.techglobal-training.com/frontend')
 
     // await page.getByRole('link', { name: 'Html Elements' }).click()
-    await clickLink(page, "Html Elements");
-  });
+    await clickLink(page, 'Html Elements')
+  })
 
   // test.fail("Annotations - fail", async ({ page }) => {
 
@@ -45,7 +45,7 @@ test.describe("Annotations", () => {
    * 6. Validate their id and value
    */
 
-	test("Annotations - step @smoke", async ({ page }, testInfo ) => {
+	test('Annotations - step @smoke', async ({ page }, testInfo ) => {
 
 		console.log(testInfo.title)
 		console.log(testInfo.error?.message)
@@ -71,5 +71,5 @@ test.describe("Annotations", () => {
 			await expect(paragraphs).toHaveText(['Hello World!', 'I like automation testing!'])
 		})
 		
-  });
-});
+  })
+})

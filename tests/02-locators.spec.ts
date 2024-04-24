@@ -1,37 +1,37 @@
-import { test } from "@playwright/test";
+import { test } from '@playwright/test'
 
-test.describe("Playwright Locators", () => {
-  test("Playwright Locator API", async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/");
+test.describe('Playwright Locators', () => {
+  test('Playwright Locator API', async ({ page }) => {
+    await page.goto('https://www.techglobal-training.com/')
 
-    await page.locator("#logo").click();
-    await page.click("#logo");
+    await page.locator('#logo').click()
+    await page.click('#logo')
 
-    const myLogo = page.locator("#logo");
+    const myLogo = page.locator('#logo')
 
-    await myLogo.click();
-  });
+    await myLogo.click()
+  })
 
-  test("Playwright - Custom Pseudo Classes", async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/frontend");
+  test('Playwright - Custom Pseudo Classes', async ({ page }) => {
+    await page.goto('https://www.techglobal-training.com/frontend')
 
     // These are two same ways to locate the element by their visibile text on the UI
     // await page.locator('a', { hasText: 'Html Elements'}).click()
-    await page.locator('a:has-text("Html elements")').click();
+    await page.locator('a:has-text("Html elements")').click()
 
-    await page.locator('button:text("Register")').click();
-    await page.locator('button:has-text("Sign in"):visible').click();
+    await page.locator('button:text("Register")').click()
+    await page.locator('button:has-text("Sign in"):visible').click()
 
     console.log(await page.locator('#radio-button-group > div').count())
 
     console.log(await page.locator('#radio-button-group > div', { has: page.locator('#java_radio') }).count())
-  });
+  })
 
-  test("Playwright - Chaining the Locators", async ({ page }) => {
+  test('Playwright - Chaining the Locators', async ({ page }) => {
 
-    await page.goto("https://www.techglobal-training.com/frontend");
+    await page.goto('https://www.techglobal-training.com/frontend')
 
-    await page.locator('a:has-text("Html elements")').click();
+    await page.locator('a:has-text("Html elements")').click()
 
     // const item_1 = page.locator('#unordered_list_item1')
 
@@ -39,12 +39,12 @@ test.describe("Playwright Locators", () => {
 
     // const childItem = page.locator('#unordered_list_item1')
     const childItem = unorderedList.locator('#unordered_list_item1')
-  });
+  })
 
-  test("Playwright - Handling multiple elements", async ({ page }) => {
+  test('Playwright - Handling multiple elements', async ({ page }) => {
 
-    await page.goto("https://www.techglobal-training.com/frontend");
-    await page.locator('a:has-text("Html elements")').click();
+    await page.goto('https://www.techglobal-training.com/frontend')
+    await page.locator('a:has-text("Html elements")').click()
 
     const unorderedList = page.locator('#unordered_list > li')
 
@@ -69,11 +69,11 @@ test.describe("Playwright Locators", () => {
     for(const checkbox of checkboxGroup2) {
       await checkbox.click()
     }
-  });
+  })
 
-  test("Playwright - Built-in locators", async ({ page }) => {
+  test('Playwright - Built-in locators', async ({ page }) => {
 
-    await page.goto("https://www.techglobal-training.com/frontend");
+    await page.goto('https://www.techglobal-training.com/frontend')
 
     // await page.locator('a:has-text("Html elements")').click();
     await page.getByRole('link', { name: 'Html Elements' }).click()
@@ -83,11 +83,11 @@ test.describe("Playwright Locators", () => {
     await page.getByRole('button', { name: 'Register'}).click()
 
     await page.getByPlaceholder('Enter text here').fill('TechGlobal')
-  });
+  })
 
-  test("Playwright - filter() locator API", async ({ page }) => {
+  test('Playwright - filter() locator API', async ({ page }) => {
 
-    await page.goto("https://www.techglobal-training.com/frontend");
+    await page.goto('https://www.techglobal-training.com/frontend')
 
     // await page.locator('a:has-text("Html elements")').click();
     await page.getByRole('link', { name: 'Html Elements' }).click()
@@ -112,5 +112,5 @@ test.describe("Playwright Locators", () => {
     console.log(`Locaterd wrapper is: ${uniqueWrapper}`)
 
 
-  });
-});
+  })
+})

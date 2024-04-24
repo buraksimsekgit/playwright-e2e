@@ -1,13 +1,13 @@
-import { test, expect } from "@playwright/test";
-import { clickButton, clickLink } from "../helpers/clickHelpers";
+import { test } from '@playwright/test'
+import { clickButton, clickLink } from '../helpers/clickHelpers'
 
-test.describe("Dialogs", () => {
+test.describe('Dialogs', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/frontend");
-    await clickLink(page, "Alerts");
-  });
+    await page.goto('https://www.techglobal-training.com/frontend')
+    await clickLink(page, 'Alerts')
+  })
 
-  test("Handling Dialogs", async ({ page }) => {
+  test('Handling Dialogs', async ({ page }) => {
     // page.on('dialog', async(dialog) => {
 
     // 	const type = await dialog.type()
@@ -35,26 +35,26 @@ test.describe("Dialogs", () => {
     //   console.log(dialog.message());
     // });
 
-    page.once("dialog", async (dialog) => {
-      await dialog.accept();
+    page.once('dialog', async (dialog) => {
+      await dialog.accept()
 
-      console.log(dialog.message());
-    });
+      console.log(dialog.message())
+    })
 
-    await clickButton(page, "Warning alert");
+    await clickButton(page, 'Warning alert')
 
-    page.once("dialog", async (dialog) => {
-      await dialog.dismiss();
+    page.once('dialog', async (dialog) => {
+      await dialog.dismiss()
 
-      console.log(dialog.message());
-    });
-    await clickButton(page, "Confirmation alert");
+      console.log(dialog.message())
+    })
+    await clickButton(page, 'Confirmation alert')
 
-    page.once("dialog", async (dialog) => {
-      dialog.accept("My Message");
+    page.once('dialog', async (dialog) => {
+      await dialog.accept('My Message')
 
-      console.log(dialog.message());
-    });
-    await clickButton(page, "Prompt alert");
-  });
-});
+      console.log(dialog.message())
+    })
+    await clickButton(page, 'Prompt alert')
+  })
+})

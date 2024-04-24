@@ -1,11 +1,11 @@
-import { test, expect } from "@playwright/test";
-import { clickButton, clickLink } from "../helpers/clickHelpers";
+import { test, expect } from '@playwright/test'
+import { clickLink } from '../helpers/clickHelpers'
 
-test.describe("Assertions", () => {
+test.describe('Assertions', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/frontend");
-    await clickLink(page, "Html Elements");
-  });
+    await page.goto('https://www.techglobal-training.com/frontend')
+    await clickLink(page, 'Html Elements')
+  })
 
   test('Auto-retry, web-first - async locator assertions', async({ page }) => {
 
@@ -81,8 +81,8 @@ test.describe("Assertions", () => {
 
   test('Creating custom assertions', async({ page }) => {
 
-    await page.goto("https://www.techglobal-training.com/frontend");
-    await clickLink(page, "Project - Infinite Scroll");
+    await page.goto('https://www.techglobal-training.com/frontend')
+    await clickLink(page, 'Project - Infinite Scroll')
 
     const articles = page.locator('.infinite-scroll-component > div')
     const articlesCount = await articles.count()

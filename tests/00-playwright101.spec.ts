@@ -1,15 +1,15 @@
-import { test, chromium } from "@playwright/test";
+import { test, chromium } from '@playwright/test'
 
-test.describe("Playwright 101", async () => {
+test.describe('Playwright 101', async () => {
   // This will trigger the test runner.
-  test("Playwright 101 - Test Case", () => {
+  test('Playwright 101 - Test Case', () => {
     // console.log('Tech Global')
     // Tests to be executed
-  });
+  })
 
   // Test runner will trigger the browser context
   // using the { page } fixture
-  test("Playwright 101 - Test Case 2", ({ page }) => {
+  test('Playwright 101 - Test Case 2', ({ page }) => {
     // const myobj = {
     //   name: "myName",
     //   lastName: "lastName",
@@ -18,15 +18,15 @@ test.describe("Playwright 101", async () => {
     // const { name, lastName } = myobj;
     // name;
     // Test t be executed
-  });
+  })
 
   // Marks a function as asynchronous using 'async' keyword
   // meaning it might take some time to complete
-  test("Playwright 101 - Test Case 3", async ({ page }) => {
+  test('Playwright 101 - Test Case 3', async ({ page }) => {
     // The await keyword pauses function exectuon untill a Promise is resolved,
     // ensuring code runs only after the Promise is fulfilled or rejected
-    await page.goto("https://www.techglobal-training.com/");
-  });
+    await page.goto('https://www.techglobal-training.com/')
+  })
 
 	// Imagine this is any BDD keyword (Given, When, And)
 	test('Playwright 101 - Cucumber Syntax', async () => {
@@ -35,7 +35,7 @@ test.describe("Playwright 101", async () => {
 		const context = await browser.newContext()
 		const page = await context.newPage()
 
-		await page.goto("https://www.techglobal-training.com/")
+		await page.goto('https://www.techglobal-training.com/')
 
 		await page.close()
 	})
@@ -46,7 +46,7 @@ test.describe("Playwright 101", async () => {
 
 		const page = await context.newPage()
 
-		await page.goto("https://www.techglobal-training.com/")
+		await page.goto('https://www.techglobal-training.com/')
 
 		await page.close()
 	})
@@ -55,9 +55,9 @@ test.describe("Playwright 101", async () => {
 
 		const page = await context.newPage()
 
-		await page.goto("https://www.techglobal-training.com/")
+		await page.goto('https://www.techglobal-training.com/')
 
 		await page.close()
 	})
 
-});
+})

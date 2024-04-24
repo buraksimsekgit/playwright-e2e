@@ -1,20 +1,20 @@
-import { test, expect } from "@playwright/test";
-import { clickLink } from "../helpers/clickHelpers";
+import { test, expect } from '@playwright/test'
+import { clickLink } from '../helpers/clickHelpers'
 
-test.describe("iFrames", async () => {
+test.describe('iFrames', async () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/frontend");
-    await clickLink(page, "IFrames");
-  });
+    await page.goto('https://www.techglobal-training.com/frontend')
+    await clickLink(page, 'IFrames')
+  })
 
-  test("iFrames Example", async ({ page }) => {
+  test('iFrames Example', async ({ page }) => {
     // Use frameLocator() API to target iFrame instead of locator
-    const frameLocator = page.frameLocator("#form_frame");
+    const frameLocator = page.frameLocator('#form_frame')
 
     // After you target the iframe, you can use locator() API method and chain it with the frameLocator
     // to target any element you want inside the iframe
-    await frameLocator.locator("#first_name").fill("TechGlobal");
-  });
+    await frameLocator.locator('#first_name').fill('TechGlobal')
+  })
 
   /**
    * Go to https://techglobal-training.com/frontend/
@@ -25,10 +25,10 @@ test.describe("iFrames", async () => {
    * Validate the result equals "You entered: John Doe"
    */
 
-  test("iFrames Test Case", async ({ page }) => {
+  test('iFrames Test Case', async ({ page }) => {
 
-    const frameLocator = page.frameLocator("#form_frame");
-    const inputFields = frameLocator.locator("#first_name, #last_name")
+    const frameLocator = page.frameLocator('#form_frame')
+    const inputFields = frameLocator.locator('#first_name, #last_name')
 
     await inputFields.last().scrollIntoViewIfNeeded()
 
@@ -49,5 +49,5 @@ test.describe("iFrames", async () => {
     await submitBtn.click()
 
     await expect(result).toHaveText(`You entered: ${name} ${lastName}`)
-  });
-});
+  })
+})

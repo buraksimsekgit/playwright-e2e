@@ -1,11 +1,11 @@
-import { test } from "@playwright/test";
-import { clickButton, clickLink } from "../helpers/clickHelpers";
+import { test } from '@playwright/test'
+import { clickLink } from '../helpers/clickHelpers'
 
-test.describe("Element State", () => {
+test.describe('Element State', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/frontend");
-    await clickLink(page, "Html Elements");
-  });
+    await page.goto('https://www.techglobal-training.com/frontend')
+    await clickLink(page, 'Html Elements')
+  })
 
   test('Getting Element State', async({ page }) => {
 
@@ -27,9 +27,9 @@ test.describe("Element State", () => {
   })
 
   test('Getting Element State - Checkbox and Radio Buttons', async({ page }) => {
-    const apple = page.getByRole("checkbox", { name: "Apple" });
-    const microsoft = page.getByRole("checkbox", { name: "Microsoft" });
-    const tesla = page.getByRole("checkbox", { name: "Tesla" });
+    const apple = page.getByRole('checkbox', { name: 'Apple' })
+    const microsoft = page.getByRole('checkbox', { name: 'Microsoft' })
+    // const tesla = page.getByRole('checkbox', { name: 'Tesla' })
 
     await apple.check()
     const isAppleChecked = await apple.isChecked()

@@ -1,28 +1,28 @@
-import { test, expect } from "@playwright/test";
-import { clickLink } from "../helpers/clickHelpers";
+import { test, expect } from '@playwright/test'
+import { clickLink } from '../helpers/clickHelpers'
 
-test.describe("Interacting Multiple tabs", async () => {
+test.describe('Interacting Multiple tabs', async () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.techglobal-training.com/frontend");
-    await clickLink(page, "Multiple Windows");
-  });
+    await page.goto('https://www.techglobal-training.com/frontend')
+    await clickLink(page, 'Multiple Windows')
+  })
 
-  test("Create a new tab", async ({ page, context }) => {
+  test('Create a new tab', async ({ page, context }) => {
     // const newTab = await page.context().newPage()
-    const newTab = await context.newPage();
+    const newTab = await context.newPage()
 
-    await newTab.goto("https://www.apple.com/");
+    await newTab.goto('https://www.apple.com/')
 
-    await page.bringToFront();
+    await page.bringToFront()
 
-    await page.goto("https://www.google.com");
+    await page.goto('https://www.google.com')
 
-    await page.locator('[name="q"]').fill("TechGlobal");
+    await page.locator('[name="q"]').fill('TechGlobal')
 
-    await page.keyboard.press("Enter");
-  });
+    await page.keyboard.press('Enter')
+  })
 
-  test("Interacting/switching to a new tab", async ({ page }) => {
+  test('Interacting/switching to a new tab', async ({ page }) => {
     // await page.pause()
 
     // await clickLink(page, 'Apple')
@@ -40,27 +40,27 @@ test.describe("Interacting Multiple tabs", async () => {
     // await page.bringToFront()
 
     const [newTab] = await Promise.all([
-      page.waitForEvent("popup"),
-      clickLink(page, "Apple"),
-    ]);
+      page.waitForEvent('popup'),
+      clickLink(page, 'Apple'),
+    ])
 
-    await expect(newTab).toHaveTitle("Apple");
+    await expect(newTab).toHaveTitle('Apple')
 
-    const numbers = [1, 2, 3];
-    const [first, second] = numbers;
+    const numbers = [1, 2, 3]
+    const [first, second] = numbers
 
-    console.log(first);
-    console.log(second);
+    console.log(first)
+    console.log(second)
 
     const [newTab2] = await Promise.all([
-      page.waitForEvent("popup"),
-      clickLink(page, "Microsoft"),
-    ]);
+      page.waitForEvent('popup'),
+      clickLink(page, 'Microsoft'),
+    ])
 
     await expect(newTab2).toHaveTitle(
-      "Microsoft – Cloud, Computers, Apps & Gaming"
-    );
-  });
+      'Microsoft – Cloud, Computers, Apps & Gaming'
+    )
+  })
 
   /**
    * Go to https://techglobal-training.com/frontend/
@@ -70,17 +70,17 @@ test.describe("Interacting Multiple tabs", async () => {
    * Click on the "Tesla" link and validate URL contains "Tesla"
    */
 
-  test("Test Case", async ({ page }) => {
-    const links = ["Apple", "Microsoft", "Tesla"];
+  test('Test Case', async ({ page }) => {
+    const links = ['Apple', 'Microsoft', 'Tesla']
 
     for (const link of links) {
       const [newTab] = await Promise.all([
-        page.waitForEvent("popup"),
+        page.waitForEvent('popup'),
         clickLink(page, link),
-      ]);
+      ])
 
-      expect(newTab.url()).toContain(link.toLowerCase());
-      await newTab.close();
+      expect(newTab.url()).toContain(link.toLowerCase())
+      await newTab.close()
     }
-  });
-});
+  })
+})
