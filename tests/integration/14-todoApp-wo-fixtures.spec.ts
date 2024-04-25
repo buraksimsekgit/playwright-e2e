@@ -7,7 +7,7 @@
  */
 
 import { test } from '@playwright/test'
-import { TodoPage } from '../pages/TodoPage'
+import { TodoPage } from '../../pages/TodoPage'
 
 test.describe('todo tests', async () => {
   let todoPage: TodoPage

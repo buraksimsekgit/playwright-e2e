@@ -1,5 +1,5 @@
 import { test } from '@playwright/test'
-import { clickLink } from '../helpers/clickHelpers'
+import { clickLink } from '../../helpers/clickHelpers'
 
 test.describe('Element State', () => {
   test.beforeEach(async ({ page }) => {

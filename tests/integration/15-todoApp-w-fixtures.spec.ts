@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/todo-fixtures'
+import { test, expect } from '../../fixtures/todo-fixtures'
 
 test.describe('todo test', async () => {
   test('should add an item', async ({ todoPage, page }) => {

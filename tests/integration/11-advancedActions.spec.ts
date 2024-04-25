@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { clickLink } from '../helpers/clickHelpers'
+import { clickLink } from '../../helpers/clickHelpers'
 
 test.describe('Advanced user Actions', () => {
   test.beforeEach(async ({ page }) => {

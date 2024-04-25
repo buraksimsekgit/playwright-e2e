@@ -1,5 +1,5 @@
 import { test } from '@playwright/test'
-import { clickButton, clickLink } from '../helpers/clickHelpers'
+import { clickButton, clickLink } from '../../helpers/clickHelpers'
 
 test.describe('User Actions', () => {
   test.beforeEach(async ({ page }) => {

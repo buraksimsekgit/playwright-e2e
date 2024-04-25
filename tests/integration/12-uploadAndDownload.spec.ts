@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { clickButton, clickLink } from '../helpers/clickHelpers'
+import { clickButton, clickLink } from '../../helpers/clickHelpers'
 import fs from 'fs'
 import path from 'path'
 

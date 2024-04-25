@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/page-object-fixtures'
+import { test, expect } from '../../fixtures/page-object-fixtures'
 
 test.describe('Login', async () => {
   // let loginPage: LoginPage
