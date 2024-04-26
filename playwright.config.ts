@@ -12,6 +12,9 @@ dotenv.config()
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  // timeout: 8000,
+
+  // globalTimeout: 100000,
   // globalSetup: 'tests/setup/global.setup.ts',
   // globalTeardown: '',
   testDir: './tests',

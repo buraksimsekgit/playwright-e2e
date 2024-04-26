@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test'
 import { clickLink } from '../../helpers/clickHelpers'
 
+test.describe.configure({ mode: 'serial', retries: 2})
+
 test.describe('Assertions', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://www.techglobal-training.com/frontend')
